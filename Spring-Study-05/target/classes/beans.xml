@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="address" class="Address">
+        <property name="address" value="西安"/>
+        </bean>
+
+    <!--        <bean id="books" class="Student"/>-->
+<!--        bean id 是创建的实例化类对象 class是类名-->
+        <bean id="student"  class="Student">
+
+<!--            property后面的name是属性名，写死的，等号右边的是对象的具体属性，value是它的值-->
+<!--                第一种注入方式：注入value-->
+            <property name="name"   value="LGD"/>
+<!--           第二种注入方式：注入ref&ndash;&gt;-->
+            <property name="address" ref="address"/>
+<!--            第三种注入方式：数组-->
+            <property name="books">
+                <array>
+                    <value>红楼梦</value>
+                    <value>水浒传</value>
+                    <value>三国演义</value>
+                </array>
+            </property>
+
+<!--            list-->
+            <property name="hobbys">
+                <list>
+                    <value>听歌</value>
+                    <value>写代码</value>
+                </list>
+            </property>
+
+<!--            Map-->
+            <property name="card">
+                <map>
+                    <entry key="idCard" value="12345"></entry>
+                    <entry key="bankCard" value="54321"></entry>
+                </map>
+            </property>
+
+<!--            set-->
+            <property name="games">
+                <set>
+                    <value>王者荣耀</value>
+                    <value>幻想三国</value>
+                </set>
+            </property>
+
+<!--            null-->
+            <property name="wife">
+                <null></null>
+            </property>
+
+<!--            Properties-->
+            <property name="info">
+                <props>
+                    <prop key="driver">12589</prop>
+                    <prop key="url">5689</prop>
+                    <prop key="username">ln</prop>
+                    <prop key="password">ln827192690</prop>
+                </props>
+            </property>
+        </bean>
+
+
+</beans>

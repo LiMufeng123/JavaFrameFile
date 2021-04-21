@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--使用Spring来创建对象，在Spring这些都称为Bean
+    原来创建对象的方式：
+    类型  变量名    new 类型
+    Hello hello = new Hello();
+    现在：
+    id = 变量名
+    class = new的对象；
+    property 相当于给对象的属性设置一个值！
+    -->
+<!--
+    无参构造方式创建User对象
+    <bean id="user" class="User">
+            <property name="name" value="LiNing"/>
+        </bean>
+-->
+
+    <!--
+    有参构造方式1：创建User对象，通过下标给形参列表赋值
+    -->
+<!--    <bean id="user" class="User">-->
+<!--    <constructor-arg index="0" value="hhhh"/>-->
+<!--    </bean>-->
+
+
+    <!--
+有参构造方式2：创建User对象，通过形参类型给形参列表赋值!!不建议使用
+-->
+<!--        <bean id="user" class="User">-->
+<!--        <constructor-arg type="java.lang.String" value="hhhh"/>-->
+<!--        </bean>-->
+
+
+<!--    有参构造方式3：创建User对象，直接给各个属性赋值-->
+<!--    id:bean的唯一标识符，也相当于我们学的对象名-->
+<!--    name:别名，可以同时取多个-->
+<!--    property:类的属性-->
+    <bean id="user" class="User" name="user2,user3">
+        <constructor-arg name="name" value="hhh1h"/>
+            <property name="name" value="Legend"/>
+    </bean>
+
+<!--    起别名-->
+    <alias name="user" alias="newUser"/>
+
+<!--    import机制-->
+<!--<import resource="beans.xml"/>-->
+<!--<import resource="beans1.xml"/>-->
+
+
+</beans>
